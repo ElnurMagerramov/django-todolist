@@ -1,0 +1,93 @@
+<style>
+  * {
+    text-align: center;
+    font-size: 20px;
+  }
+</style>
+<h1>Dataframe</h1>
+
+<form action="adddataframe/" method="post">
+  {% csrf_token %} Dataframe elave et:<br />
+  <input name="name" type="file" />
+  <br /><br />
+  <input type="submit" value="ok" />
+</form>
+<p>{{dfname}} elave olundu</p>
+{% comment %} {% for post in df.X %}
+<i>
+  <b> {{post}} </b>
+</i>
+<br /><br />
+{% endfor %} {% endcomment %}
+
+<table border="1">
+  <thead>
+    <tr>
+      {% for post in df.columns %}
+      <th>
+        <b> {{post}} </b>
+      </th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in df.X %}
+    <tr>
+      <td>
+        <b> {{x}} </b>
+      </td>
+      <td>
+        <b> {{x}} </b>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% comment %} <form action="encoder/" method="post">
+  {% csrf_token %}
+  <br />
+  <input name="name" type="text" value="{{dfname}}" />
+<br /><br />
+ <p>Sec regression model:</p>
+  <input type="radio" id="LinearRegression" name="regressor" value="LinearRegression">
+  <label for="LinearRegression">LinearRegression</label><br>
+  <input type="radio" id="KNeighborsClassifier" name="regressor" value="KNeighborsClassifier">
+  <label for="KNeighborsClassifier">KNeighborsClassifier</label><br>
+  <input type="radio" id="LogisticRegression" name="regressor" value="LogisticRegression">
+  <label for="LogisticRegression">LogisticRegression</label>
+
+<p>outlier haqqinda ne fikirlesirsen:</p>
+  <input type="radio" id="remove" name="outlier" value="remove">
+  <label for="remove">Remove outlier</label><br>
+  <input type="radio" id="no" name="outlier" value="no">
+  <label for="no">Don't touch</label><br>
+
+  <br /><br />
+  <input type="submit" value="ok" />
+</form>
+<p>accurancy score: {{score}}</p> {% endcomment %}
+{% comment %} <p>{{encodered}} encoder olundu</p>
+<table border="1">
+  <thead>
+    <tr>
+      {% for post in df2.columns %}
+      <th>
+        <b> {{post}} </b>
+      </th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in df2.X %}
+    <tr>
+      <td>
+        <b> {{x}} </b>
+      </td>
+      <td>
+        <b> {{x}} </b>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> {% endcomment %}

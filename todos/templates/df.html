@@ -1,0 +1,47 @@
+<form action="encoder/" method="post">
+  {% csrf_token %}
+  <br />
+  <input name="name" type="text" value="{{dfname}}" />
+  <br /><br />
+  <p>select target:</p>
+  {% for y in df.columns %}
+  <input type="radio" name="column" value="{{y}}" />
+    <label for="{{y}}">{{y}}</label><br />
+  {% endfor %}
+
+  <p>Sec regression model:</p>
+   
+  <input
+    type="radio"
+    id="LinearRegression"
+    name="regressor"
+    value="LinearRegression"
+  />
+    <label for="LinearRegression">LinearRegression</label><br />
+   
+  <input
+    type="radio"
+    id="KNeighborsClassifier"
+    name="regressor"
+    value="KNeighborsClassifier"
+  />
+    <label for="KNeighborsClassifier">KNeighborsClassifier</label><br />
+   
+  <input
+    type="radio"
+    id="LogisticRegression"
+    name="regressor"
+    value="LogisticRegression"
+  />
+    <label for="LogisticRegression">LogisticRegression</label>
+
+  <p>outlier haqqinda ne fikirlesirsen:</p>
+    <input type="radio" id="remove" name="outlier" value="remove" />  
+  <label for="remove">Remove outlier</label><br />
+    <input type="radio" id="no" name="outlier" value="no" />  
+  <label for="no">Don't touch</label><br />
+
+  <br /><br />
+  <input type="submit" value="ok" />
+</form>
+<p>accurancy score: {{score}}</p>

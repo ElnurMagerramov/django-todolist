@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="https://seeklogo.com/images/D/django-logo-4C5ECF7036-seeklogo.com.png"
+    />
+  </head>
+  <style>
+    a{
+        text-decoration:none;
+        color:white;
+        padding:10px;
+        border-radius:10%
+    }
+</style>
+  <body>
+  <h1>Ediləcəklər listin:</h1>
+    <ol>
+      {% for todo in todos_list %}
+      <li>
+        <b> {{todo.name}} </b>
+        <a style="background-color: red" href="delete/{{ todo.id }}">
+          yerine yetir
+        </a>
+      </li><br><br>
+      {% endfor %}
+
+      <br>
+      <p>
+        <a  style="background-color: green" href="add/">Başqa birşey etmək istəyirsən?</a>
+      </p>
+    </ol>
+  </body>
+</html>

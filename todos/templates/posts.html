@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="https://seeklogo.com/images/D/django-logo-4C5ECF7036-seeklogo.com.png"
+    />
+  </head>
+  <style>
+    a {
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+      border-radius: 10%;
+    }
+    table,
+    th,
+    td {
+      border: 1px solid;
+      border-collapse: collapse;
+    }
+    th, td {
+  padding: 15px;
+}
+  </style>
+  <body>
+    <h1>Pandas data:</h1>
+    <ol>
+      {% for post in posts.Domain %}
+      <li>
+        <b> {{post}} </b>
+      </li>
+      <br /><br />
+      {% endfor %}
+
+      <br />
+      <p></p>
+    </ol>
+    <table>
+      <thead>
+        <tr>
+          {% for post in columns %}
+          <th>
+            <b> {{post}} </b>
+          </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+      {% for x in posts.0 %}
+        <td>
+          <b> {{x}} </b>
+        </td>
+        {% endfor %}
+      </tr>
+      <tr>
+      {% for x in posts.1 %}
+        <td>
+          <b> {{x}} </b>
+        </td>
+        {% endfor %}
+      </tr>
+      <tr>
+      {% for x in posts.2 %}
+        <td>
+          <b> {{x}} </b>
+        </td>
+        {% endfor %}
+      </tr>
+      <tr>
+      {% for x in posts.3 %}
+        <td>
+          <b> {{x}} </b>
+        </td>
+        {% endfor %}
+      </tr>
+      <tr>
+      {% for x in posts.4 %}
+        <td>
+          <b> {{x}} </b>
+        </td>
+        {% endfor %}
+      </tr>
+      </tbody>
+    </table>
+  </body>
+  <script>
+
+  </script>
+</html>
